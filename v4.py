@@ -8,6 +8,7 @@ if __name__ == '__main__':
         "wd": wd
     }
     qs = parse.urlencode(qs)
+    print(qs)
     fullurl = url + qs
     print(fullurl)
     rsp = request.urlopen(fullurl)

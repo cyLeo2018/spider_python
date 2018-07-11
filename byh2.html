@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    
+        <meta charset="utf-8">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta name="author" content="B游汇推广">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="generator" content="CoreThink">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="B游汇推广">
+        <meta name="format-detection" content="telephone=no,email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+
+
+    <title>首页｜B游汇推广后台管理</title>
+
+    <link rel="apple-touch-icon" type="image/x-icon" href="/favicon.ico">
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='/Public/css/modules/materialadmin/css/theme-default/google_font.css' rel='stylesheet' type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="/Public/css/modules/materialadmin/css/theme-default/bootstrap-1422823238.css" />
+
+    <link type="text/css" rel="stylesheet" href="/Public/css/modules/materialadmin/css/theme-default/materialadmin-1422823243.css" />
+
+    <link type="text/css" rel="stylesheet" href="/Public/css/modules/materialadmin/css/theme-default/font-awesome.min-1422823239.css" />
+
+    <link type="text/css" rel="stylesheet" href="/Public/css/modules/materialadmin/css/theme-default/material-design-iconic-font.min-1422823240.css" />
+
+
+    <link type="text/css" rel="stylesheet" href="/Public/css/modules/materialadmin/css/theme-default/libs/rickshaw/rickshaw-1422823372.css" />
+
+    <link type="text/css" rel="stylesheet" href="/Public/css/modules/materialadmin/css/theme-default/libs/morris/morris.core-1422823370.css" />
+
+    <link type="text/css" rel="stylesheet" href="/Public/css/slimtable.css" />
+    <link type="text/css" rel="stylesheet" href="/Public/css/chosen/bootstrap-chosen.css" />
+    
+
+    
+
+    <script src="/Public/js/modules/materialadmin/libs/jquery/jquery-1.11.2.min.js"></script>
+
+
+    <!-- END STYLESHEETS -->
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/Public/js/modules/materialadmin/libs/utils/html5shiv-1422823601.js"></script>
+    <script type="text/javascript" src="/Public/js/modules/materialadmin/libs/utils/respond.min-1422823601.js"></script>
+
+    <![endif]-->
+</head>
+
+<style>
+    #alert-message{
+        word-wrap:break-word;
+        word-break:break-all;
+    }
+</style>
+
+
+
+
+<body class="menubar-hoverable header-fixed ">
+<!-- BEGIN HEADER-->
+<header id="header" >
+
+
+
+    <div class="headerbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="headerbar-left">
+            <ul class="header-nav header-nav-options">
+                <li class="header-nav-brand" >
+                    <div class="brand-holder">
+                        <a href="/">
+                            <span class="text-lg text-bold text-primary">B游汇推广后台管理平台</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="headerbar-right">
+            <!--<ul class="header-nav header-nav-options">
+                <li>
+                    &lt;!&ndash; Search form &ndash;&gt;
+                    <form class="navbar-search" role="search" action="/index.php?s=/game/version.html">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="keywords" placeholder="搜索游戏">
+                        </div>
+                        <input class="hidden" name="s" value="game/version">
+                        <button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
+                    </form>
+                </li>
+            </ul>--><!--end .header-nav-options -->
+            <ul class="header-nav header-nav-profile">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+                        <img src="/Public/img/modules/materialadmin/default_head.jpg" alt="head first" id="top_avatar" />
+                            
+					<span class="profile-info">
+                        qq3299861842						<small>陈洋</small>
+					</span>
+                    </a>
+                    <ul class="dropdown-menu animation-dock">
+                        <!--<li class="dropdown-header">Config</li>-->
+                        <!--<li><a href="../pages/profile.html">My profile</a></li>-->
+                        <!--<li><a href="../pages/blog/post.html"><span class="badge style-danger pull-right">16</span>My blog</a></li>-->
+                        <!--<li><a href="../pages/calendar.html">My appointments</a></li>-->
+                        <!--<li class="divider"></li>-->
+                        <li><a href="/index.php?s=/user/personal_data.html"><i class="fa fa-user"></i> 个人中心</a></li>
+                        <li><a href="/index.php?s=/public/locked.html"><i class="fa fa-fw fa-lock"></i> Lock</a></li>
+                        <li><a href="/index.php?s=/public/logout.html"><i class="fa fa-fw fa-power-off text-danger"></i> 退出登录</a></li>
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+            </ul><!--end .header-nav-profile -->
+            <ul class="header-nav header-nav-toggle">
+                <li>
+                    <a class="btn btn-icon-toggle btn-default" href="/" data-toggle="offcanvas" data-backdrop="false">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </a>
+                </li>
+            </ul><!--end .header-nav-toggle -->
+        </div><!--end #header-navbar-collapse -->
+
+        <!---->
+        <!--<div class="customer" style="float: right;padding-top:10px; margin-right: 15px;">-->
+            <!--<div><span style="color: #0a0c0e;">客服QQ</span>&nbsp;:&nbsp;2853537836</div>-->
+            <!--<div><span style="color: #0a0c0e;">客服电话</span>&nbsp;:&nbsp;028-62640599</div>-->
+        <!--</div>-->
+        <!---->
+    </div>
+</header>
+<!-- END HEADER-->
+
+<!-- BEGIN BASE-->
+<div id="base">
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas">
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+        
+    <style type="text/css">
+        .content{width: 90%;margin: 0 auto;margin-top:20px;font-size:14px;background:#ffffff;padding-bottom:30px;}
+        .content ul{padding:0;}
+        .content li{list-style-type: none;}        h1,h2,h3{ margin:0;}
+        .information{padding:10px;/*border-bottom:solid 5px #e5e6e6;*/}
+        .information .info{margin-top:10px;width: 100%;display: flex;flex-wrap: wrap;}
+        .information .info a{
+            margin: 0 0 10px 0;
+            width: 110px;
+            height: 54px;
+            display: block;
+            line-height: 16px;
+            text-decoration: none;
+            border: solid 1px #2a8dd9;
+            padding: 14px 6px 0 6px;
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .information .info a:hover{text-decoration:none;background:#00a0e9;color:#ffffff;}
+        .clear{clear:both;}
+        table{table-layout:fixed;}
+        table td{
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .col-md-6 .card{
+            min-height: 600px;
+        }
+        .M-box{
+            position: absolute !important;
+            bottom: 16px;
+            left: 20px;
+        }
+        .card-head{
+            background: #EEA2AD;
+            color: #fff;
+        }
+        .info_d{cursor: pointer;}
+        .modal-body img,.modal-body table{
+            max-width: 100% !important;
+        }
+        .info-e{
+            color:red;
+            font-weight: bold;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/Public/libs/pagination/style/pagination.css">
+                <section>
+                <div class="row">
+                    <div  class="col-sm-12">
+                        <h4>游戏账号注册地址：http://www.17byh.com/index.php/reg/index/agent/q3or</h4>
+                    </div>
+
+                </div>
+                <div class="section-body">
+                    <div class="row" style="margin-bottom: 20px;">
+                        <form action="http://cps.17byh.com/Index/search" method="get"  class="form-inline">
+                            <div  class="col-sm-10">
+                                <div class="form-group">
+                                    <input style="width: 220px ;" type="text" name="keywords" class="form-control" value="" placeholder="请输入公告标题" />
+                                </div>
+                                <button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-head">
+                                            <header>上架公告</header>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table no-margin">
+                                                <tbody class="ann3">
+                                                    <tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="969">【7.10新游】卡牌类《大主宰-满V版》9:30首发</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-10</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="968">【7.10新游】【独代】双端回合《大话仙游》10:00内测首发</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-09</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="967">【7.10新游】航海类《海盗奇兵》10:00首发</a>                                                            </td>
+                                                            <td width="20%">07-09</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="966">【7.10新游】全新RPG《北冥有鲲》9:50首发</a>                                                            </td>
+                                                            <td width="20%">07-09</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="962">【7.6新游】【双端】动作RPG《至尊大掌门》9:30首发</a>                                                            </td>
+                                                            <td width="20%">07-05</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="961">【7.6新游】【双端】50元无限元宝《刀了个塔-GM版》10:00首发</a>                                                            </td>
+                                                            <td width="20%">07-05</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="960">【7.6新游】【双端】卡牌《火影忍者-忍者大师》9:50首发</a>                                                            </td>
+                                                            <td width="20%">07-05</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="959">【7.6新游】【双端】横版动作格斗《别动我学姐》14:00首发</a>                                                            </td>
+                                                            <td width="20%">07-05</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="958">【7.6新游】动作卡牌《姬斗三国-满V》10:00首发</a>                                                            </td>
+                                                            <td width="20%">07-05</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="957"> 【7.5新游】【双端】卡牌RPG《复仇者联盟-满V》11:00首发</a>                                                            </td>
+                                                            <td width="20%">07-04</td>
+                                                        </tr>                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="page-ann3" class="M-box"></div>   
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-head">
+                                            <header>活动公告</header>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table no-margin">
+                                                <tbody class="ann2">
+                                                    <tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="963">【重要通知】提现功能已上线</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-05</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="652">【6.25更新福利活动】推广送元宝，每日免费领</a>
+                                                                                                                                </td>
+                                                            <td width="20%">03-21</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="312">【B游汇平台——各游戏永久活动】</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-10</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="965">【7.6-7.8】登录送豪礼  非玩不可</a>                                                            </td>
+                                                            <td width="20%">07-06</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="964">【7.6-7.8】周末返利</a>                                                            </td>
+                                                            <td width="20%">07-06</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="946">【6.29-7.1】月末返利1000%今此3天</a>                                                            </td>
+                                                            <td width="20%">06-29</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="945">【6.29-7.1】月末大回馈</a>                                                            </td>
+                                                            <td width="20%">06-29</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="923">【6.22-6.24】激情世界杯，返利大回馈</a>                                                            </td>
+                                                            <td width="20%">06-22</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="922">【6.22-6.24】激情世界杯，敢来“赌”一把</a>                                                            </td>
+                                                            <td width="20%">06-22</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="921">【传世手游】6月22日登录送礼，仅限一天！！</a>                                                            </td>
+                                                            <td width="20%">06-22</td>
+                                                        </tr>                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="page-ann2" class="M-box"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-head">
+                                            <header>平台公告</header>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table no-margin">
+                                                <tbody class="ann1">
+                                                    <tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="928">【贪玩渣渣辉】因付费极佳改名为《雪鹰领主》</a>
+                                                                                                                                </td>
+                                                            <td width="20%">06-25</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="487">【B游汇转游活动】新转游活动细则</a>
+                                                                                                                                </td>
+                                                            <td width="20%">11-27</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="416">H5游戏结算点位统一为35% 望周知</a>
+                                                                                                                                </td>
+                                                            <td width="20%">10-10</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="338">【B游汇平台日常返利】6.4日已更新</a>
+                                                                                                                                </td>
+                                                            <td width="20%">08-03</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="330">【B游汇游戏VIP价格表】</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-27</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="211">【重要通知】B游汇平台归属规则，请玩家务必绑定手机号，不要把账号给其他人！！</a>
+                                                                                                                                </td>
+                                                            <td width="20%">04-17</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="119">【B游汇游戏简介】</a>
+                                                                                                                                </td>
+                                                            <td width="20%">02-07</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="920">发布测试周期活动</a>                                                            </td>
+                                                            <td width="20%">06-21</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="903">【7月20日】御姐无双下架公告</a>                                                            </td>
+                                                            <td width="20%">06-15</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                                                                                    <a class="info_d" onclick="check(this)" data-id="640">新神曲3.8版本更新公告</a>                                                            </td>
+                                                            <td width="20%">03-19</td>
+                                                        </tr>                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="page-ann1" class="M-box"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-head">
+                                            <header>下架公告</header>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table no-margin">
+                                                <tbody class="ann4">
+                                                    <tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="954">【圣魂觉醒】7.31日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-03</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="953">【阴阳师学院-满V版】8.7日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-02</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="952">【三国群英传】8.14日关服公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-02</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="951">【大天使圣剑】7.30日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-02</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="950">【全民来打怪BT】7.10日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-02</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="949">【西游灵妖记】7.1日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-02</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="948">【渣渣传奇满V版】7.30日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">07-02</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="941">【暗黑战神】7.20日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">06-27</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="858">【英雄WOW满V】7月31日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">05-31</td>
+                                                        </tr><tr>
+                                                            <td width="80%">
+                                                                <a class="info_d info-e" onclick="check(this)" data-id="857">【英雄WOW】7月31日下架公告</a>
+                                                                                                                                </td>
+                                                            <td width="20%">05-31</td>
+                                                        </tr>                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="page-ann4" class="M-box"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" style="min-height: 1224px">
+                                <div class="card-head">
+                                    <header>开服列表</header>
+                                    <a style="float:right;margin-right: 10px;font-size: 16px;" type="button" class="" id="excel" href="/index.php?s=/index/index/type/1.html">导出Excel</a>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th>开服时间</th>
+                                                <th>游戏名称</th>
+                                                <th>开服区服</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="ann5">
+                                            <tr>
+                                                    <td style="overflow:visible;">07-11 00:00</td>
+                                                    <td>山海异兽录-满V版</td>
+                                                    <td>175区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 00:00</td>
+                                                    <td>至尊大掌门-满V版</td>
+                                                    <td>20区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 08:30</td>
+                                                    <td>西游挂机</td>
+                                                    <td>108区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 08:50</td>
+                                                    <td>无敌OL</td>
+                                                    <td>36区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 08:50</td>
+                                                    <td>爆衣大作战飞升版</td>
+                                                    <td>35区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 08:50</td>
+                                                    <td>剑短情长满V版</td>
+                                                    <td>44区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:30</td>
+                                                    <td>至尊大掌门-满V版</td>
+                                                    <td>21区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:30</td>
+                                                    <td>大主宰-满V版</td>
+                                                    <td>1区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:30</td>
+                                                    <td>攻沙渣渣辉</td>
+                                                    <td>14区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:30</td>
+                                                    <td>山海异兽录-满V版</td>
+                                                    <td>176区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:50</td>
+                                                    <td>新少年群英传飞升版</td>
+                                                    <td>65区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:50</td>
+                                                    <td>暗黑血统超V版</td>
+                                                    <td>73区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:50</td>
+                                                    <td>火影忍者-忍者大师</td>
+                                                    <td>8区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:50</td>
+                                                    <td>我欲齐天-超V版</td>
+                                                    <td>52区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 09:50</td>
+                                                    <td>武侠Q传</td>
+                                                    <td>24区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>玄天九剑GM版</td>
+                                                    <td>33服</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>魔兽再临</td>
+                                                    <td>25区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>三国少主-满V</td>
+                                                    <td>16区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>貂蝉你别跑</td>
+                                                    <td>24区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>天域苍穹-GM版</td>
+                                                    <td>29服</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>海盗骑兵</td>
+                                                    <td>4区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>姬斗三国-满V版</td>
+                                                    <td>7区</td>
+                                                </tr><tr>
+                                                    <td style="overflow:visible;">07-11 10:00</td>
+                                                    <td>酷酷爱魔兽-满V版</td>
+                                                    <td>11区</td>
+                                                </tr>                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="page-ann5" class="M-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel"
+         aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="alertModalLabel">操作确认</h4> <span id="alertModalsubhead"></span></div>
+                <div class="modal-body"><p id="alert-message">确定要删除本条?</p></div>
+                <div class="modal-footer"><a type="button" class="btn btn-success pull-left extra "
+                                             style="display: none;">下载附件</a>
+                    <button type="button" class="btn btn-primary " data-dismiss="modal">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Public/libs/layer/layer.js"></script>
+    <script src="/Public/libs/pagination/script/jquery.pagination.js"></script>
+    <script type="text/javascript">
+
+        $("#page-ann1").pagination({
+            totalData: 44,
+            showData: 10,
+            coping: true,
+            homePage: '首页',
+            endPage: '末页',
+            count: 1,
+            callback:function(api){
+                layer.load(2);
+                var data = {
+                    page: api.getCurrent(),
+                    type: 1,
+                };
+                $.post('/index.php?s=/public/noticeajax.html',data,function(json){
+                    addhtml(json,$('.ann1'));
+                    layer.closeAll();
+                });
+            }
+        });
+
+        $("#page-ann2").pagination({
+            totalData: 171,
+            showData: 10,
+            coping: true,
+            homePage: '首页',
+            endPage: '末页',
+            count: 1,
+            callback:function(api){
+                layer.load(2);
+                var data = {
+                    page: api.getCurrent(),
+                    type: 2,
+                };
+                $.post('/index.php?s=/public/noticeajax.html',data,function(json){
+                    addhtml(json,$('.ann2'));
+                    layer.closeAll();
+                });
+            }
+        });
+
+        $("#page-ann3").pagination({
+            totalData: 259,
+            showData: 10,
+            coping: true,
+            homePage: '首页',
+            endPage: '末页',
+            count: 1,
+            callback:function(api){
+                layer.load(2);
+                var data = {
+                    page: api.getCurrent(),
+                    type: 3,
+                };
+                $.post('/index.php?s=/public/noticeajax.html',data,function(json){
+                    addhtml(json,$('.ann3'));
+                    layer.closeAll();
+                });
+            }
+        });
+
+        $("#page-ann4").pagination({
+            totalData: 111,
+            showData: 10,
+            coping: true,
+            homePage: '首页',
+            endPage: '末页',
+            count: 1,
+            callback:function(api){
+                layer.load(2);
+                var data = {
+                    page: api.getCurrent(),
+                    type: 4,
+                };
+                $.post('/index.php?s=/public/noticeajax.html',data,function(json){
+                    addhtml(json,$('.ann4'));
+                    layer.closeAll();
+                });
+            }
+        });
+        $("#page-ann5").pagination({
+            totalData: 353,
+            showData: 23,
+            coping: true,
+            homePage: '首页',
+            endPage: '末页',
+            count: 1,
+            callback:function(api){
+                layer.load(2);
+                var data = {
+                    page: api.getCurrent(),
+                };
+                $.post('/index.php?s=/public/serviceajax.html',data,function(json){
+                    addservice(json,$('.ann5'));
+                    layer.closeAll();
+                });
+            }
+        });
+        function addhtml(data,dom){
+            var html = '';
+            var info='';
+            for (var i = 0; i < data.length; i++) {
+                if(data[i].recommend==2){
+                    info = 'info-e';
+                }else{
+                    info='';
+                }
+                html += "<tr><td width='80%'><a class='info_d "+info+"' onclick='check(this)' data-id='"+data[i].id+"'>"+data[i].title+"</a></td><td width='20%'>"+data[i].create_time+"</td></tr>";
+            }
+            dom.html(html);
+        }
+        function addservice(data,dom){
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+                html += "<tr><td>"+data[i].sertime+"</td><td>"+data[i].name+"</td><td>"+data[i].sername+"</td></tr>";
+            }
+            dom.html(html);
+        }
+    </script>
+    <script>
+        function check(item){
+            layer.load(2);
+            var id = $(item).attr("data-id");
+            $('.extra').hide();
+            $.ajax({
+                type: "POST",
+                url: "/index.php?s=/index/notice.html",
+                dataType: 'JSON',
+                data: {'id':id},
+                success: function (json) {
+                    $('#alertModal').modal();
+                    $('#alertModalLabel').html(json.data.title);
+                    $('#alert-message').html(json.data.content);
+                    $('#alertModalsubhead').html('&nbsp;&nbsp;&nbsp;&nbsp;浏览量：'+json.data.count+'&nbsp;&nbsp;&nbsp;&nbsp;');
+                    if(json.data.file > 0){
+                        $('.extra').attr('href',json.data.extra).show();
+                    }
+                    layer.closeAll();
+                }
+            });
+        }
+    </script>
+
+    </div>
+    <!-- END CONTENT -->
+
+    <!-- BEGIN MENUBAR-->
+    <div id="menubar" class="menubar-inverse ">
+        <div class="menubar-fixed-panel">
+            <div>
+                <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="expanded">
+                <a href="__ROOT_/">
+                    <span class="text-lg text-bold text-primary ">B游汇推广后台管理平台</span>
+                </a>
+            </div>
+        </div>
+        <div class="menubar-scroll-panel">
+            <!-- BEGIN MAIN MENU -->
+            
+            
+            <ul id="main-menu" class="gui-controls">
+                <li class="active" >
+                <a href="/" >
+                    <div class="gui-icon"><i class="md md-home"></i></div>
+                    <span class="title">首页</span>
+                </a>
+                </li>
+                <li class="gui-folder ">
+                        <a href="/index.php?s=/admin/user/spread_list.html" >
+                        <div class="gui-icon"><i class="md md-group-add"></i></div>
+                        <span class="title">推广员列表</span>
+                        </a>
+                        
+                    </li><li class="gui-folder ">
+                        <a href="/index.php?s=/admin/game/search.html" >
+                        <div class="gui-icon"><i class="fa fa-gamepad"></i></div>
+                        <span class="title">游戏列表(游戏推广)</span>
+                        </a>
+                        
+                    </li><li class="gui-folder ">
+                        <a  >
+                        <div class="gui-icon"><i class="fa fa-gamepad"></i></div>
+                        <span class="title">H5游戏</span>
+                        </a>
+                        <ul>
+                                                                    <li ><a href="/index.php?s=/admin/hf_game/search.html" ><span class="title">游戏列表(游戏推广)</span></a></li>
+                                                                        <li ><a href="/index.php?s=/admin/hf_game/register.html" ><span class="title">账号注册查询</span></a></li>
+                                                                        <li ><a href="/index.php?s=/admin/hf_game/order.html" ><span class="title">游戏订单查询</span></a></li>
+                                                                </ul>
+                    </li><li class="gui-folder ">
+                        <a href="/index.php?s=/admin/gift/personnel_gift.html" >
+                        <div class="gui-icon"><i class="fa md-find-in-page"></i></div>
+                        <span class="title">礼包申领</span>
+                        </a>
+                        
+                    </li><li class="gui-folder ">
+                        <a  >
+                        <div class="gui-icon"><i class="md md-find-in-page"></i></div>
+                        <span class="title">玩家数据查询</span>
+                        </a>
+                        <ul>
+                                                                    <li ><a href="/index.php?s=/admin/data/game_data.html" ><span class="title">游戏数据</span></a></li>
+                                                                        <li ><a href="/index.php?s=/admin/data/user_data.html" ><span class="title">推广员数据</span></a></li>
+                                                                        <li ><a href="/index.php?s=/admin/user/player_pay.html" ><span class="title">玩家充值</span></a></li>
+                                                                        <li ><a href="/index.php?s=/admin/stat/register.html" ><span class="title">玩家注册</span></a></li>
+                                                                </ul>
+                    </li><li class="gui-folder ">
+                        <a  >
+                        <div class="gui-icon"><i class="fa fa-gamepad"></i></div>
+                        <span class="title">返利中心</span>
+                        </a>
+                        <ul>
+                                                                    <li ><a href="/index.php?s=/admin/rebate/apply.html" ><span class="title">返利列表</span></a></li>
+                                                                </ul>
+                    </li><li class="gui-folder ">
+                        <a href="/index.php?s=/admin/user/personal_data.html" >
+                        <div class="gui-icon"><i class="md md-settings"></i></div>
+                        <span class="title">账户管理</span>
+                        </a>
+                        
+                    </li><li class="gui-folder ">
+                        <a  >
+                        <div class="gui-icon"><i class="md md-attach-money"></i></div>
+                        <span class="title">财务中心</span>
+                        </a>
+                        <ul>
+                                                                    <li ><a href="/index.php?s=/admin/finance/index.html" ><span class="title">财务个人中心</span></a></li>
+                                                                        <li ><a href="/index.php?s=/admin/finance/detail.html" ><span class="title">账务明细</span></a></li>
+                                                                </ul>
+                    </li>            </ul>
+
+                        
+
+
+            <div class="menubar-foot-panel">
+                <small class="no-linebreak hidden-folded">
+                    <span class="opacity-75">Copyright &copy; 2016</span> <strong>mox</strong>
+                </small>
+            </div>
+        </div><!--end .menubar-scroll-panel-->
+    </div><!--end #menubar-->
+    <!-- END MENUBAR -->
+
+
+</div><!--end #base-->
+<!-- END BASE -->
+
+<style>
+    .gui-folder >a .title,.gui-folder >ul >li .title,body{
+        font-family: 微软雅黑, Tahoma, 宋体;
+    }
+    .verifyimg-box .verifyimg {
+        cursor: pointer;
+        width: 130px;
+        height: 41px;
+        margin-top: -18px;
+        border-bottom: 1px solid #777;
+    }
+    .form-group .form-control:focus + .form-label,
+    .form-group .form-control:valid + .form-label {
+        font-size: 12px!important;
+        -ms-transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+    .form .form-group .input-group{
+        margin-top: 0!important;
+    }
+</style>
+<!-- BEGIN JAVASCRIPT -->
+
+
+<script src="/Public/js/modules/materialadmin/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/bootstrap/bootstrap.min.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/spin.js/spin.min.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/autosize/jquery.autosize.min.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/moment/moment.min.js"></script>
+<script src="/Public/js/modules/materialadmin/core/cache/ec2c8835c9f9fbb7b8cd36464b491e73.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/jquery-knob/jquery.knob.min.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/sparkline/jquery.sparkline.min.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+<script src="/Public/js/modules/materialadmin/core/cache/43ef607ee92d94826432d1d6f09372e1.js"></script>
+<script src="/Public/js/modules/materialadmin/libs/rickshaw/rickshaw.min.js"></script>
+<script src="/Public/js/modules/materialadmin/core/cache/63d0445130d69b2868a8d28c93309746.js"></script>
+<script src="/Public/js/chosen/chosen.jquery.js"></script>
+<script src="/Public/js/tongyouyou.js"></script>
+<script src="/Public/js/sys-common.js"></script>
+<script src="/Public/js/jquery.cookie.js"></script>
+
+<script type="text/javascript">
+    $(".menubar-toggle").on("click",function(){
+        var cs = $("body").attr("class");
+        if(cs.indexOf('menubar-pin') == -1){
+            $.cookie('the_cookie', 'pageopen');
+        }else{
+            $.cookie('the_cookie', null);
+        }
+    })
+</script>
+<style>
+    html{
+        min-width: 970px !important;
+    }
+</style>
+
+
+
+
+
+<!-- END JAVASCRIPT -->
+
+
+</body>
+</html>

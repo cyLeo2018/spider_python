@@ -119,4 +119,68 @@
 - cookie和session的区别
     - 存放位置不同
     - cookie放在客户端，并不安全，所以不存放敏感信息
+    - session有过期时间
+    - 单个cookie保存数据不超过4K，很多浏览器限制一个站点最多保存20个cookie
+- session的存放位置
+    - 存放在服务器端
+    - 一般情况，session放在内存或者数据库中
+    - 没有cookie登录 案例v11
+
+- 使用cookie登录
+    - 直接把cookie复制下来，然后放入请求头，案例v12
+    - http模块包含一些关于cookie的模块，通过模块我们可以自动使用cookie
+        - CookieJar
+            - 管理、存储cookie,向传出的http请求添加cookie
+            - cookie存储在内存中，CookieJar实例回收后cookie将消失
+        - FileCookieJar(filename, delayload=None, policy=None)
+            - 使用文件管理cookie
+            - filename是存储的cookie文件
+        - MozillaCookieJar
+            - 创建与mozilla浏览器cookie.txt兼容的FileCookieJar实例
+        - LwpCookieJar
+            - 创建与libwww-perl标准兼容的Set-Cookie3格式的FileCookieJar实例
+        - 关系：CookieJar-->FileCookieJar-->MozillaCookieJar & LwpCookieJar
+    - 利用CookieJar访问 v13
+        - 自动使用cookie登录，流程
+        - 打开登录页面后自动通过用户名密码登录
+        - 自动提取反馈的cookie
+        - 利用提取的cookie登录隐私页面
+    - handler是Handler的实例，常用的有
+        - request.HTTPCookieProcessor(cookie)
+        - request.HTTPHandler()
+        - request.HTTPSHandler()
+    - 创建handler后，使用opener打开，打开后相应的功能由相应的handler处理
+    - 将cookie作为变量打印出来 案例v14
+        - cookie属性
+            - name 名称
+            - value 值
+            - domain 可以访问此cookie的域名
+            - path 可以访问cookie的页面路径
+            - exprise 过期时间
+            - size 大小
+            - http字段
+    - cookie的保存-FileCookieJar 案例v15
+    - cookie的读取，案例v16
+
+# SSL
+    - SSL证书就是指遵守SSL安全套接层协议的服务器数字证书(SecureSocketLayer)
+    - 网景公司开发
+    - CA（CertifacateAuthority）数字证书认证中心，发放、管理、废除证书的收信人的第三方机构
+    - 遇到不信任的SSL证书，需要单独处理，案例v17
+
+# js加密
+    - 有的反爬虫策略采用js对需要传输的数据进行加密处理(迅雷是取md5值)
+    - 经过加密传输的是密文，但是
+    - 加密函数或者过程一定是在浏览器完成，也就是一定会把代码(js代码)暴露给使用者
+    - 经过阅读加密算法，就可以模拟出加密过程，从而达到破解
+    - 案例v18,v19
+    
+
+
+
+
+
+
+
+
 
