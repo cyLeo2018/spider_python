@@ -175,11 +175,61 @@
     - 经过阅读加密算法，就可以模拟出加密过程，从而达到破解
     - 案例v18,v19
     
+# ajax
+- 异步请求
+- 一定会有URL，请求方法，可能有数据
+- 一般使用json格式 案例v20
 
-
-
-
-
+# Requests模块
+- HTTP for humans 更简洁更友好
+- 继承urllib的所有特征
+- 底层使用了urllib3
+- 开源地址：https://github.com/requests/requests
+- 中文文档：http://docs.python-requests.org/zh_CN/latest/index.html
+- 安装:conda install requests
+- get请求
+    - requests.get(url)
+    - requests.request("get", url)
+    - 可以带有headers和parmas参数
+    - 案例v21
+- get返回内容
+    - 案例v22
+- post
+    - rsp = requests.post(url, data=)
+    - 案例v23
+    - data, headers要求dict类型
+- proxy
+    - proxies = {
+        "http":
+        "https":
+    }
+    - rsp = requests.request("get", "http:xxx", proxies=proxies)
+    - 代理有可能报错，如果使用人数过多，考虑安全问题，可能会被关闭
+- 用户验证
+    - 代理验证
+        - proxy = {
+            "http": "china:123456@192.168.1.1:4444"
+        }
+        - rsp = requests.get("http//www.baidu.com", proxies=proxy)
+- web客户端验证
+    - auth = ("test1", "123456")
+    - rsp = requests.get("http://www.baidu.com", auth=auth)
+- cookie
+    - requests可以自动处理cookie信息
+    - 案例
+- session
+    - 与服务器端session不是同一个
+    - 模拟一次会话，从客户端浏览器链接服务器开始，到客户端浏览器断开链接
+    - 能让我们跨请求时保持某些参数，比如在同一个session实例发出的，所有请求之间保持cookie
+        ss = requests.session()
+        headers = {"User-Agent": "xxxxxx"}
+        data = {"name": "xxxxxx"}
+        ss.post("http://www.baidu.com", data=, headers=)
+        rsp = ss.get("xxxxxx")
+- https请求验证SSL证书
+    - 参数verify负责表示是否需要验证ssl证书，默认是True
+    - 如果不需要验证SSL证书，则设置成False表示关闭
+        rsp = requests.get("https://www.baidu.com", verify=False)
 
 
 
