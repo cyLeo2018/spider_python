@@ -30,3 +30,114 @@
     - 通过Match对象的方法，对结果进行操作
 
 - 案例v24,match的基本使用
+- 正则常用方法：
+    - match:从开始位置开始查找，一次匹配
+    - search:从任何位置开始查找，一次匹配 案例v25
+    - findall：全部匹配，返回列表
+    - finditer：全部匹配，返回迭代器
+    - split:分割字符串，返回列表
+    - sub：替换
+- 匹配中文
+    - 中文 unicode范围主要在[u4e00-u9fa5]
+    - 案例v27
+- 贪婪与非贪婪模式
+    - 贪婪模式：在整个表达式匹配成功的前提下，尽可能多的匹配
+    - 非贪婪模式：尽可能少的匹配
+    - python中数量词默认是贪婪模式
+    - 例如:
+# XML
+- XML(EXtensible Markup Language)
+- http://www.w3school.com.cn/xml/index.asp
+- 案例v28.xml
+- 概念:父节点、子节点、先辈节点、兄弟节点、后代节点
+
+# XPath
+- XPath(XML Path Language) 在 XML 文档中查找信息的语言
+- 官方文档：http://www.w3school.com.cn/xpath/index.asp
+- XPath开发工具：
+    - XMLQuire
+    - chrome:XPath Helper
+    - firefox:XPath CHecker
+- 常用路径表达式：
+    - nodename:选取此节点的所有子节点
+    - /:从根节点开始选取
+    - //:选取元素，不考虑元素的具体位置
+    - .:当前界定啊
+    - ..:父节点
+    - @:选取属性
+    - 案例
+- Predicates
+    - 用来查找特定节点
+    - /bookstore/book[1]
+    - /bookstore/book[last()]
+    - /bookstore/book[last()-1]
+    - /bookstore/book[position()<3]
+    - /bookstore/book[@lang]
+    - /bookstore/book[@lang="cn"]
+    - /bookstore/book[@price < 98 ]
+    - /bookstore/book[@price < 90 ]/title
+- 通配符
+    - *
+    - @*
+    - node()
+- 选取多个路径
+    - //book/title | //book/author
+    - //title | //price
+
+# lxml库
+- python的HTML/XML解析器
+- 官方文档：https://lxml.de/index.html
+- 功能：
+    - 解析HTML，案例v29
+    - 文件读取,案例v30.html,v31
+    - etree和XPath配合使用,案例v32
+
+# CSS选择器 BeautifulSoup4
+- 官方文档：http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/
+- 几个爬取工具的比较：
+    - 正则 re:速度快，不好用，无需安装
+    - beautifulsoup4：速度慢，使用简单，需要安装
+    - lxml：比较快，使用简单，需要安装
+- 案例v33
+- 四大对象
+    - Tag
+    - NavigableString
+    - BeautifulSoup
+    - Comment
+- Tag
+    - 对应html中的标签
+    - 可以通过soup.tag_name
+    - tag两个重要属性
+        - name
+        - attrs
+    - 案例a34
+- NavigableString
+    - 对应内容值
+- BeautifulSoup
+    - 表示的是一个文档的内容
+- Comment
+    - 特殊类型的NavigableString对象
+    - 对其输出，内容不包括注释符号
+- 遍历文档对象
+    - contents:tag的子节点以列表的方式给出
+    - children：子节点以迭代器形式返回
+    - descendants：所有孙节点
+    - string：
+    - 案例a34
+- 搜索文档对象
+    - find_all(name, attrs, recursive, text, **kwargs)
+        - name 按照字符串搜索，可以传入的内容为
+            - 字符串
+            - 正则表达式
+            - 列表
+        - kewwordt参数:表示属性
+        - text: 对应tag的文本值
+- CSS选择器
+    - 使用soup.select 返回列表
+    - 通过标签名称:soup.select("title")
+    - 通过类名:soup.select(".content")
+    - id查找:soup.select("#name_id")
+    - 组合查找:soup.select("div #input_content")
+    - 属性查找：soup.select("img[class='photo']")
+    - 获取tag内容：tag.get_text
+    - 案例35
