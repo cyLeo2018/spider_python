@@ -1,8 +1,14 @@
 # 参考资料
-- python网络数据采集 图灵工业出版
-- 精通python爬虫框架Scrapy 人民邮电出版
+- Python 3网络爬虫开发实战 催庆才
 - [python3网络爬虫](https://blog.csdn.net/c406495762/article/details/72858983)
 - [Scrapy官方教程](http://scrapy-chs.readthedocs.io/zh_CN/0.24/intro/tutorial.html)
+
+- python网络数据采集 图灵工业出版
+- Python爬虫开发与项目实战， 范传辉， 机械工业出版社
+- 精通python爬虫框架Scrapy 人民邮电出版 李斌 翻译
+
+
+
 # 前提知识
 - url
 - http
